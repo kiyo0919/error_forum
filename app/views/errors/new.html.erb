@@ -4,17 +4,16 @@
     <div class="dubmit-page">
       <h3>エラー対応を記録してください</h3>
     </div>
-      <%= form_with model: @error, local: true do |f|%>
+      <%= form_with model: @error, local: true do |f| %>
         <div class="form-group">
           <%= f.label :title, "タイトル",  class: "col-md-3 col-form-label" %>
           <%= f.text_field :title, class:"form-control form-control-sm col-md-10" %>
         </div>
         <div class="form-group row">
-          <%= f.label :study_phase, "学習フェーズ", class: "col-md-2 col-form-label" %>
-          <%= f.select :study_phase, Error.study_phases_i18n.keys.map {|k| [I18n.t("enums.error.study_phase.#{k}"), k]} %>
-          <%#= f.text_field :study_phase, class:"form-control form-control-sm col-md-3" %>
+          <%= f.label :learning_phase, "学習フェーズ", class: "col-md-2 col-form-label" %>
+          <%= f.select :learning_phase, @learning_phases.keys.map{|k| [I18n.t("enums.error.learning_phase.#{k}"), k]}, include_blank: "--選択して下さい--" %>
           <%= f.label :technical_item_id, "技術項目", class: "col-md-1 col-form-label" %>
-          <%= f.text_field :technical_item_id, class:"form-control form-control-sm col-md-3" %>
+          <%= f.collection_select :technical_item_id, TechnicalItem.all, :id, :name, include_blank: "--選択して下さい--" %>
         </div>
         <div class="form-group">
           <%= f.label :detail, "エラー内容", class: "col-md-3 col-form-label" %>
