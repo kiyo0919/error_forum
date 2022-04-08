@@ -2,6 +2,7 @@ class ErrorsController < ApplicationController
 
   def new
     @error = Error.new
+    @learning_phases = Error.learning_phases
   end
 
   def show
@@ -46,7 +47,7 @@ class ErrorsController < ApplicationController
   private
 
   def error_params
-    params.require(:error).permit(:title, :image, :detail, :study_phase, :solution,
+    params.require(:error).permit(:title, :image, :detail, :learning_phase, :solution,
                                   :url, :mentor_name, :technical_item_id)
   end
 end

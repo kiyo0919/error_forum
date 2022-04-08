@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_04_08_013507) do
   create_table "errors", charset: "utf8mb4", force: :cascade do |t|
     t.string "title", null: false
     t.text "detail", null: false
-    t.integer "study_phase"
+    t.integer "learning_phase"
     t.text "solution", null: false
     t.string "url"
     t.string "mentor_name"

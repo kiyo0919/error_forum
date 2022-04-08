@@ -1,7 +1,7 @@
 ja:
   enums:
     error:
-      study_phase:
+      learning_phase:
         basic_knowledge: "基礎知識学習フェーズ"
         team_development: "チーム開発フェーズ"
         advance_task: "応用課題フェーズ"

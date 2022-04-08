@@ -1,2 +1,8 @@
-<%= markdown(@error.solution).html_safe %>
-<%= @error.study_phase_i18n %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <%= markdown(@error.solution).html_safe %>
+      <%= @error.learning_phase_i18n %>
+    </div>
+  </div>
+</div>
