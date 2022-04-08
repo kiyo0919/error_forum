@@ -4,6 +4,10 @@ class ErrorsController < ApplicationController
     @error = Error.new
   end
 
+  def show
+    @error = Error.find(params[:id])
+  end
+
   def confirm
     @error = Error.new(error_params)
   end
@@ -42,7 +46,7 @@ class ErrorsController < ApplicationController
   private
 
   def error_params
-    params.require(:error).permit(:title, :image, :detail, :learning_phase, :solutin,
+    params.require(:error).permit(:title, :image, :detail, :study_phase, :solution,
                                   :url, :mentor_name, :technical_item_id)
   end
 end
