@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+TechnicalItem.create!(
+  [
+    {
+      name: 'HTML・CSS'
+    },
+    {
+      name: 'Git'
+    },
+    {
+      name: 'Ruby'
+    },
+    {
+      name: 'RubyonRails'
+    },
+    {
+      name: '設計'
+    },
+    {
+      name: 'その他'
+    }
+    ]
+  )

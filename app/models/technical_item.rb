@@ -1,0 +1,2 @@
+class TechnicalItem < ApplicationRecord
+end
