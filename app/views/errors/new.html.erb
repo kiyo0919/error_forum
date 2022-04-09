@@ -1,40 +1,44 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-    <div class="dubmit-page">
-      <h3>エラー対応を記録してください</h3>
+<main>
+  <div class="error-submit">
+    <div class="submit-title">
+      <h1>エラー対応を記録を記入してくだい</h1>
     </div>
-      <%= form_with model: @error, local: true do |f| %>
-        <div class="form-group">
-          <%= f.label :title, "タイトル",  class: "col-md-3 col-form-label" %>
-          <%= f.text_field :title, class:"form-control form-control-sm col-md-10" %>
-        </div>
-        <div class="form-group row">
-          <%= f.label :learning_phase, "学習フェーズ", class: "col-md-2 col-form-label" %>
-          <%= f.select :learning_phase, @learning_phases.keys.map{|k| [I18n.t("enums.error.learning_phase.#{k}"), k]}, include_blank: "--選択して下さい--" %>
-          <%= f.label :technical_item_id, "技術項目", class: "col-md-1 col-form-label" %>
-          <%= f.collection_select :technical_item_id, TechnicalItem.all, :id, :name, include_blank: "--選択して下さい--" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :detail, "エラー内容", class: "col-md-3 col-form-label" %>
-          <div class="form-inline">
-            <%= f.text_area :detail, class:"form-control col-md-4", size: "50x5" %>
-            <%= f.label "画像がある場合", class: "col-md-2 col-form-label" %>
-            <%= f.file_field :image, accept: "image/*" %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :solution, "解決方法(Markdown形式で入力できます)", class: "col-md-5 col-form-label" %>
-          <%= f.text_area :solution, class:"form-control col-md-10", size: "50x10" %>
-        </div>
-        <div class="form-group row">
-          <%= f.label :url, "質問URL", class: "col-md-1 col-form-label" %>
-          <%= f.text_field :url, class:"form-control form-control-sm col-md-3" %>
-          <%= f.label :url, "対応者名", class: "col-md-1 col-form-label ml-3" %>
-          <%= f.text_field :mentor_name, class:"form-control form-control-sm col-md-3" %>
-        </div>
-        <%= f.submit "投稿",class: 'btn btn-success ml-2' %>
-      <% end %>
-    </div>
+    <%= form_with model:@error, local: true do |f| %>
+      <table class="content-table">
+        <tr>
+          <th class="content-item">タイトル</th>
+          <td class="content-body"><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <th class="content-item">学習フェーズ</th>
+          <td class="content-body"> <%= f.select :learning_phase, @learning_phases.keys.map{|k| [I18n.t("enums.error.learning_phase.#{k}"), k]}, include_blank: "--選択して下さい--" %></td>
+        </tr>
+        <tr>
+          <th class="content-item">技術項目</th>
+          <td class="content-body"><%= f.collection_select :technical_item_id, TechnicalItem.all, :id, :name, include_blank: "--選択して下さい--" %></td>
+        </tr>
+        <tr>
+          <th class="content-item">エラー内容</th>
+          <td class="content-body"><%= f.text_area :detail %></td>
+        </tr>
+        <tr>
+          <th class="content-item">画像がある場合</th>
+          <td class="content-body"><%= f.file_field :image, accept: "image/*" %></td>
+        </tr>
+        <tr>
+          <th class="content-item">解決方法(Markdown形式で入力できます)</th>
+          <td class="content-body"><%= f.text_area :solution %></td>
+        </tr>
+        <tr>
+          <th class="content-item">質問URL</th>
+          <td class="content-body"><%= f.text_field :url %></td>
+        </tr>
+        <tr>
+          <th class="content-item">対応者名</th>
+          <td class="content-body"><%= f.text_field :mentor_name %></td>
+        </tr>
+      </table>
+      <%= f.submit "投稿", class:"contact-submit" %>
+    <% end %>
   </div>
-</div>
+</main>
