@@ -7,6 +7,7 @@ class ErrorsController < ApplicationController
 
   def show
     @error = Error.find(params[:id])
+    @learning_phases = Error.learning_phases
   end
 
   def confirm

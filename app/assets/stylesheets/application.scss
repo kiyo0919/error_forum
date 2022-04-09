@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+html {
+font-size: 62.5%;
+}
+
+body {
+  background-color: #F9F9FA;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+ .notice {
+   color: green;
+ }
+
+ .alert {
+   color: red;
+ }
+
+// エラー投稿ページ
+main {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.submit-title {
+  margin: 4rem auto;
+  text-align: center;
+h1 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+}
+
+.content-table {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.content-item,.content-body {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.content-item {
+    text-align: left;
+    color: white;
+    width: 20%;
+    background-color: #35BCCD;
+}
+
+.content-body {
+    width: 80%;
+}
+
+input {
+  width: 30rem;
+  height: 2.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9FA;
+}
+
+input#error_image {
+  width: 30rem;
+  height: 2.6rem;
+  font-size: 1.2rem;
+}
+input#error_title {
+  width: 45rem;
+  height: 3.5rem;
+}
+
+select {
+  height: 2.5rem;
+  width: 30rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9FA;
+}
+
+textarea#error_detail {
+  width: 60rem;
+  height: 10rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9FA;
+}
+
+textarea#error_solution {
+  width: 60rem;
+  height: 20rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9FA;
+}
+
+.contact-submit {
+  width: 250px;
+  height: 36px;
+  background-color: #60AB9A;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto 4rem;
+  font-size: 1.4rem;
+  border-radius: 100vh;
+  border: none;
+}
