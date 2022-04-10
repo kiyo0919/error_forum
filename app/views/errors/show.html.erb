@@ -1,0 +1,44 @@
+<main>
+  <div class="error-details">
+    <div class="details-title">
+      <h1>エラー対応詳細</h1>
+    </div>
+    <table class="content-table">
+      <tr>
+        <th class="content-item">タイトル</th>
+        <td class="content-body"><%= @error.title %></td>
+      </tr>
+      <tr>
+        <th class="content-item">学習フェーズ</th>
+        <td class="content-body"> <%=  @error.learning_phase_i18n %></td>
+      </tr>
+      <tr>
+        <th class="content-item">技術項目</th>
+        <td class="content-body"><%= @error.used_technology.name %></td>
+      </tr>
+      <tr>
+        <th class="content-item">エラー内容</th>
+        <td class="content-body"><%= markdown(@error.detail).html_safe %></td>
+      </tr>
+      <tr>
+        <th class="content-item">画像がある場合</th>
+        <td class="content-body"><%#= image_tag @error.image %></td>
+      </tr>
+      <tr>
+        <th class="content-item">解決方法</th>
+        <td class="content-body"><%= markdown(@error.solution).html_safe  %></td>
+      </tr>
+      <tr>
+        <th class="content-item">質問URL</th>
+        <td class="content-body">
+          <a href=<%= @error.url %> target="_blank" rel="noopener noreferrer"><%= @error.url%></a>
+        </td>
+      </tr>
+      <tr>
+        <th class="content-item">対応者名</th>
+        <td class="content-body"><%= @error.mentor_name %></td>
+      </tr>
+    </table>
+    <%= link_to "編集", edit_error_path(@error), class:"update-btn" %>
+  </div>
+</main>
