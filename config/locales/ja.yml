@@ -11,3 +11,11 @@ ja:
         cloud_culture: "専門知識学習フェーズ(クラウド教養)"
         challenge: "チャレンジ学習フェーズ"
         development_skill_up: "開発スキルアップフェーズ"
+  activerecord:
+    attributes:
+      error:
+        title: "エラータイトル"
+        learning_phase: "学習フェーズ"
+        used_technology: "技術項目"
+        detail: "エラー内容"
+        solution: "エラー解決方法"

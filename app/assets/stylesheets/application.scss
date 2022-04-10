@@ -37,34 +37,49 @@ a:hover {
 }
 
  .notice {
+   margin-top: 4rem;
+   text-align: center;
    color: green;
+   font-size: 2rem;
+ }
+
+ main {
+   width: 100%;
  }
 
  .alert {
-   color: red;
- }
+   font-size: 1.2rem;
+  color:#262626;
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
+    ul {
+      list-style: none;
+    }
+}
 
-// エラー投稿ページ
-main {
+// エラー投稿ページ,エラー詳細ページ
+.error-submit .error-details{
   width: 80%;
   margin: 0 auto;
-  font-size: 1.5rem;
 }
 
-.submit-title {
+.submit-title, .details-title{
   margin: 4rem auto;
   text-align: center;
-h1 {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: bold;
-  font-size: 3.5rem;
-}
+  h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    font-size: 3.5rem;
+    }
 }
 
 .content-table {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .content-item,.content-body {
@@ -125,7 +140,7 @@ textarea#error_solution {
   background-color: #F9F9FA;
 }
 
-.contact-submit {
+.content-submit {
   width: 250px;
   height: 36px;
   background-color: #60AB9A;
@@ -133,7 +148,28 @@ textarea#error_solution {
   font-weight: bold;
   display: block;
   margin: 0 auto 4rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  border-radius: 100vh;
+  border: none;
+}
+
+// エラー詳細ページ
+.error-details a, a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.update-btn {
+  text-align: center;
+  line-height: 36px;
+  width: 250px;
+  height: 36px;
+  background-color: #60AB9A;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto 4rem;
+  font-size: 1.6rem;
   border-radius: 100vh;
   border: none;
 }

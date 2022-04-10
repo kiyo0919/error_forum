@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem "enum_help"
+gem "rails-i18n"

@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TechnicalItemTest < ActiveSupport::TestCase
+class UsedTechnologiesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

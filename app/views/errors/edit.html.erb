@@ -1,7 +1,7 @@
 <main>
   <div class="error-submit">
     <div class="submit-title">
-      <h1>エラー対応を記録を記入してくだい</h1>
+      <h1>更新内容を記録してください</h1>
     </div>
     <%= form_with model:@error, local: true do |f| %>
       <%= render "layouts/error_masages", model:f.object %>
@@ -39,7 +39,7 @@
           <td class="content-body"><%= f.text_field :mentor_name %></td>
         </tr>
       </table>
-      <%= f.submit "投稿", class:"content-submit" %>
+      <%= f.submit "更新", class:"content-submit" %>
     <% end %>
   </div>
 </main>

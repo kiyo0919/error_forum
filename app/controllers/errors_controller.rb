@@ -18,21 +18,23 @@ class ErrorsController < ApplicationController
     @error = Error.new(error_params)
     if @error.save
       flash[:notice] = "エラー対応を記録しました"
-      redirect_to root_path
+      redirect_to error_path(@error)
     else
+      @learning_phases = Error.learning_phases
       render :new
     end
   end
 
   def edit
     @error = Error.find(params[:id])
+    @learning_phases = Error.learning_phases
   end
 
   def update
     @error = Error.find(params[:id])
     if @error.update(error_params)
       flash[:notice] = "エラー対応内容を更新しました"
-      redirect_to root_path
+      redirect_to error_path(@error)
     else
       render :edit
     end
@@ -49,6 +51,6 @@ class ErrorsController < ApplicationController
 
   def error_params
     params.require(:error).permit(:title, :image, :detail, :learning_phase, :solution,
-                                  :url, :mentor_name, :technical_item_id)
+                                  :url, :mentor_name, :used_technology_id)
   end
 end
