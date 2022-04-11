@@ -1,0 +1,33 @@
+<main>
+  <div class="top">
+    <div class="top-title">
+      <h1>エラー掲示板</h1>
+    </div>
+    <table class="top-table">
+      <thead class="top-thead">
+        <tr>
+          <th class="thead-item">タイトル</th>
+          <th class="thead-item">学習フェーズ</th>
+          <th class="thead-item">技術項目</th>
+          <th class="thead-item">URL</th>
+          <th class="thead-item">担当者</th>
+        </tr>
+      </thead>
+      <tbody class="top-tbody">
+        <% @errors.each do |error| %>
+          <tr>
+            <td class="tbody-item">
+              <%= link_to error_path(error) do %>
+                <%= error.title %>
+              <% end %>
+            </td>
+            <td class="tbody-item"><%= error.learning_phase_i18n %></td>
+            <td class="tbody-item"><%= error.used_technology.name %></td>
+            <td class="tbody-item text-overflow"><a href=<%= error.url %> target="_blank" rel="noopener noreferrer"><%= error.url %></a></td>
+            <td class="tbody-item"><%= error.mentor_name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</main>

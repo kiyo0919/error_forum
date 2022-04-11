@@ -1,11 +1,11 @@
 class UsedTechnologiesController < ApplicationController
-  def new
-    @used_technology = TechnicalItem.new
-    @used_technologies = TechnicalItem.all
+  def index
+    @used_technology = UsedTechnology.new
+    @used_technologies = UsedTechnology.all
   end
 
   def create
-    @used_technology = TechnicalItem.new(used_technology_params)
+    @used_technology = UsedTechnology.new(used_technology_params)
     if @used_technology.save
       flash[:notice] = "技術項目を追加しました"
       redirect_to new_error_path
@@ -15,7 +15,7 @@ class UsedTechnologiesController < ApplicationController
   end
 
   def destroy
-    used_technology = TechnicalItem.find(params[:id])
+    used_technology = UsedTechnology.find(params[:id])
     used_technology.destroy
     flash[:notice] = "技術項目[#{@used_technology.name}]を削除しました"
     redirect_to root_path
