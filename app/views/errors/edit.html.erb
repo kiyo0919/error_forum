@@ -20,7 +20,11 @@
         </tr>
         <tr>
           <th class="content-item">エラー内容(Markdown形式で入力できます)</th>
-          <td class="content-body"><%= f.text_area :detail %></td>
+          <td class="content-body">
+            <%= f.text_area :detail %><br>
+            Markdown形式の入力は<strong><a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank" rel="noopener noreferrer" style="color:#60AB9A;">
+            こちら</a></strong>を参考にしてください
+          </td>
         </tr>
         <tr>
           <th class="content-item">画像がある場合</th>
@@ -28,7 +32,11 @@
         </tr>
         <tr>
           <th class="content-item">解決方法(Markdown形式で入力できます)</th>
-          <td class="content-body"><%= f.text_area :solution %></td>
+          <td class="content-body">
+            <%= f.text_area :solution %><br>
+            Markdown形式の入力は<strong><a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank" rel="noopener noreferrer" style="color:#60AB9A;">
+            こちら</a></strong>を参考にしてください
+          </td>
         </tr>
         <tr>
           <th class="content-item">質問URL</th>
