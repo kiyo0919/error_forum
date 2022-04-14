@@ -14,7 +14,11 @@
       </tr>
       <tr>
         <th class="content-item">技術項目</th>
-        <td class="content-body"><%= @error.used_technology.name %></td>
+        <td class="content-body">
+          <% unless @error.used_technology_id.nil? %>
+          <%= @error.used_technology.name %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <th class="content-item">エラー内容</th>
@@ -50,5 +54,6 @@
     <%= f.hidden_field :url, value: @error.url%>
     <%= f.hidden_field :mentor_name, value: @error.mentor_name%>
     <%= f.submit "投稿", class:"content-submit" %>
+    <%= link_to "内容を修正する", new_error_path, class:"update-btn" %>
   <% end %>
 </main>
