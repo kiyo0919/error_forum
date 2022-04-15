@@ -41,4 +41,21 @@
     </table>
     <%= link_to "編集", edit_error_path(@error), class:"update-btn" %>
   </div>
+  <div class="error-comments">
+    <%= form_with model:[@error, @comment], local: true do |f| %>
+      <%= f.text_area :comment, placeholder: "コメントをここに" %>
+      <%= f.submit "送信する" %>
+    <% end %>
+    <div class="comments-table">
+      <table class="table">
+        <tbody>
+          <% @error.error_comments.each do |error_comment| %>
+          <tr>
+            <td><%= error_comment.comment %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </main>
