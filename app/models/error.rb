@@ -1,6 +1,7 @@
 class Error < ApplicationRecord
   has_one_attached :image
   belongs_to :used_technology
+  has_many :error_comments, dependent: :destroy
 
   with_options presence: true do
     validates :title
