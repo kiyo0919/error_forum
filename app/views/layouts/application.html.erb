@@ -8,6 +8,16 @@
     <%= javascript_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <%= link_to "投稿一覧", root_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About", about_path, class:"nav-link" %>
+      </li>
+    </ul>
+  </header>
   <body>
     <% flash.each do |key, value| %>
       <%=  content_tag(:p, value, class: key) %>

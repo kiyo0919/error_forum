@@ -3,6 +3,9 @@
     <div class="top-title">
       <h1>エラー掲示板</h1>
     </div>
+    <div class="update-btn">
+      <%= link_to "新規投稿", new_error_path %>
+    </div>
     <table class="top-table">
       <thead class="top-thead">
         <tr>
@@ -23,7 +26,7 @@
             </td>
             <td class="tbody-item"><%= error.learning_phase_i18n %></td>
             <td class="tbody-item"><%= error.used_technology.name %></td>
-            <td class="tbody-item text-overflow"><a href=<%= error.url %> target="_blank" rel="noopener noreferrer"><%= error.url %></a></td>
+            <td class="tbody-item"><a href=<%= error.url %> target="_blank" rel="noopener noreferrer"><%= error.url %></a></td>
             <td class="tbody-item"><%= error.mentor_name %></td>
           </tr>
         <% end %>
