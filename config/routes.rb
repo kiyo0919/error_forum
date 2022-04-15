@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
+  get "/about" => "homes#about", as: "about"
   post "errors/comfirm" => "errors#confirm", as: "confirm"
   resources :errors
   resources :used_technologies, only: [:index, :create, :destroy]
