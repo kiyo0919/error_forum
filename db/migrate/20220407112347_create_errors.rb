@@ -8,6 +8,7 @@ class CreateErrors < ActiveRecord::Migration[6.1]
       t.string :url
       t.string :mentor_name
       t.integer :used_technology_id, null: false
+      t.integer :mentor_id
       t.timestamps
     end
   end
