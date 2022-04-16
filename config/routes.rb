@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :mentors
   root to: 'homes#top'
   get "/about" => "homes#about", as: "about"
   post "errors/comfirm" => "errors#confirm", as: "confirm"

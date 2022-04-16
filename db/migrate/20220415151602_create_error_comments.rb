@@ -3,7 +3,7 @@ class CreateErrorComments < ActiveRecord::Migration[6.1]
     create_table :error_comments do |t|
       t.text :comment
       t.integer :error_id
-
+      t.integer :mentor_id
       t.timestamps
     end
   end

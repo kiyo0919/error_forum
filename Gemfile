@@ -59,3 +59,4 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem "enum_help"
 gem "rails-i18n"
+gem 'devise'
