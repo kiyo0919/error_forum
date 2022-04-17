@@ -1,4 +1,5 @@
 class ErrorsController < ApplicationController
+  before_action :authenticate_mentor!, only: [:new, :create, :confirm, :edit, :update, :destroy]
 
   def new
     @error = Error.new
