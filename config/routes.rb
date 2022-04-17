@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :mentors
+  devise_for :mentors, skip: [:passwords], controllers: {
+    registrations: "mentors/registrations",
+    sessions: 'mentors/sessions'
+  }
+
   root to: 'homes#top'
   get "/about" => "homes#about", as: "about"
   post "errors/comfirm" => "errors#confirm", as: "confirm"

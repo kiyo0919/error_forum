@@ -60,3 +60,4 @@ gem 'coderay'
 gem "enum_help"
 gem "rails-i18n"
 gem 'devise'
+gem 'devise-i18n'
