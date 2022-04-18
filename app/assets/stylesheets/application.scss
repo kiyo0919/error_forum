@@ -226,3 +226,54 @@ textarea#error_solution {
   text-decoration: none;
   color: #fff;
 }
+
+// 新規登録画面
+.sign {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 4rem auto;
+  width: 40rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  h2 {
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+  }
+  .sign-table {
+    margin: 0 auto;
+    margin-bottom: 2.5rem;
+  }
+  .table-head, .table-body {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .table-head {
+    width: 30%;
+  }
+  .table-body {
+    width: 70%;
+  }
+  input {
+    width: 20rem;
+    height: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #F9F9FA;
+  }
+  .sign-btn {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #60AB9A;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto 4rem;
+    font-size: 1.6rem;
+    border-radius: 100vh;
+    border: none;
+  }
+}
+
