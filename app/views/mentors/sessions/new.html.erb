@@ -1,22 +1,21 @@
-<h2>Log in</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= render "mentors/shared/error_messages", resource: resource %>
-  <table>
-    <tr>
-      <th>メールアドレス</th>
-      <td>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </td>
-    </tr>
-    <tr>
-      <th>パスワード</th>
-      <td>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </td>
-    </tr>
+<div class="sign">
+  <h2>ログイン</h2>
+  <table class="sign-table">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "mentors/shared/error_messages", resource: resource %>
+      <tr>
+        <th class="table-head">メールアドレス</th>
+        <td class="table-body">
+          <%= f.email_field :email, autocomplete: "email" %>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-head">パスワード</th>
+        <td class="table-body">
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </td>
+      </tr>
   </table>
-    <%= f.submit "Sign in" %>
-  <% end %>
+      <%= f.submit "ログインする", class:"sign-btn" %>
+    <% end %>
+</div>
