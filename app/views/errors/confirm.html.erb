@@ -43,17 +43,17 @@
         <td class="content-body"><%= @error.mentor_name %></td>
       </tr>
     </table>
+    <%= form_with model:@error, url:errors_path, method: :post, local:true do |f| %>
+      <%= f.hidden_field :title, value: @error.title %>
+      <%= f.hidden_field :learning_phase, value: @error.learning_phase %>
+      <%= f.hidden_field :used_technology_id, value: @error.used_technology_id %>
+      <%= f.hidden_field :detail, value: @error.detail %>
+      <%#= f.hidden_field :image, value: @image %>
+      <%= f.hidden_field :solution, value: @error.solution %>
+      <%= f.hidden_field :url, value: @error.url%>
+      <%= f.hidden_field :mentor_name, value: @error.mentor_name%>
+      <%= f.submit "投稿", class:"content-submit" %>
+      <%= link_to "内容を修正する", new_error_path, class:"btn" %>
+    <% end %>
   </div>
-  <%= form_with model:@error, url:errors_path, method: :post, local:true do |f| %>
-    <%= f.hidden_field :title, value: @error.title %>
-    <%= f.hidden_field :learning_phase, value: @error.learning_phase %>
-    <%= f.hidden_field :used_technology_id, value: @error.used_technology_id %>
-    <%= f.hidden_field :detail, value: @error.detail %>
-    <%#= f.hidden_field :image, value: @image %>
-    <%= f.hidden_field :solution, value: @error.solution %>
-    <%= f.hidden_field :url, value: @error.url%>
-    <%= f.hidden_field :mentor_name, value: @error.mentor_name%>
-    <%= f.submit "投稿", class:"content-submit" %>
-    <%= link_to "内容を修正する", new_error_path, class:"update-btn" %>
-  <% end %>
 </main>

@@ -18,6 +18,7 @@ class ErrorsController < ApplicationController
 
   def create
     @error = Error.new(error_params)
+    @error.mentor_id = current_mentor.id
     if @error.save
       flash[:notice] = "エラー対応を記録しました"
       redirect_to error_path(@error)
@@ -44,9 +45,13 @@ class ErrorsController < ApplicationController
 
   def destroy
     error = Error.find(params[:id])
+    if error.mentor_id = current_mentor.id
     error.destroy
     flash[:notice] = "エラー対応を削除しました"
-    redirect_to :root_path
+    redirect_to root_path
+    else
+      redirect_to error_path(error)
+    end
   end
 
   private
