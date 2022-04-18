@@ -27,7 +27,7 @@ body {
   background-color: #F9F9FA;
 }
 
-a {
+header a {
   color: black;
 }
 
@@ -62,7 +62,6 @@ a:hover {
 // ヘッダー
 header ul li a:hover {
   text-decoration: none;
-  color: black;
 }
 
 header {
@@ -207,9 +206,9 @@ textarea#error_solution {
 }
 
 // エラー詳細ページ
-.update-btn {
+.btn {
   text-align: center;
-  line-height: 36px;
+  line-height: 29px;
   width: 250px;
   height: 36px;
   background-color: #60AB9A;
@@ -222,9 +221,15 @@ textarea#error_solution {
   border: none;
 }
 
-.error-details a, .update-btn a, a:hover {
+.top .btn a, .top .btn a:hover, .error-details a, .error-details a:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.error-btn {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
 }
 
 // 新規登録画面
