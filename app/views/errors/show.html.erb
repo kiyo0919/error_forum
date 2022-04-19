@@ -39,11 +39,13 @@
         <td class="content-body"><%= @error.mentor_name %></td>
       </tr>
     </table>
-      <% if @error.mentor_id == current_mentor.id %>
-      <div class="error-btn">
-        <%= link_to "編集", edit_error_path(@error), class:"btn" %>
-        <%= link_to "削除する", error_path(@error), method: :delete, 'data-confirm' => "本当に消しますか？", class:"btn", style:"background-color: #D38493;" %>
-      </div>
+      <% unless current_mentor.nil? %>
+        <% if @error.mentor_id == current_mentor.id %>
+        <div class="error-btn">
+          <%= link_to "編集", edit_error_path(@error), class:"btn" %>
+          <%= link_to "削除する", error_path(@error), method: :delete, 'data-confirm' => "本当に消しますか？", class:"btn", style:"background-color: #D38493;" %>
+        </div>
+        <% end %>
       <% end %>
   </div>
   <div class="error-comments">
@@ -56,6 +58,11 @@
         <tbody>
           <% @error.error_comments.each do |error_comment| %>
           <tr>
+            <td>
+              <% unless error_comment.mentor_id.nil? %>
+                <%= error_comment.mentor.name %>
+              <% end %>
+            </td>
             <td><%= error_comment.comment %></td>
           </tr>
           <% end %>
