@@ -4,6 +4,9 @@ class ErrorCommentsController < ApplicationController
     @error = Error.find(params[:error_id])
     @comment = ErrorComment.new(error_comment_params)
     @comment.error_id = @error.id
+    unless current_mentor.nil?
+      @comment.mentor_id = current_mentor.id
+    end
     @comment.save
     redirect_to error_path(@error)
   end
