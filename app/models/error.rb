@@ -3,6 +3,7 @@ class Error < ApplicationRecord
   belongs_to :used_technology
   has_many :error_comments, dependent: :destroy
   belongs_to :mentor
+  has_many :favorites, dependent: :destroy
 
   with_options presence: true do
     validates :title
