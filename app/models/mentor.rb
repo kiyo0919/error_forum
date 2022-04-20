@@ -6,4 +6,5 @@ class Mentor < ApplicationRecord
 
   has_many :supports, class_name: "Error"
   has_many :error_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
