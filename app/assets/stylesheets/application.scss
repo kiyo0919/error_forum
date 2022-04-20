@@ -115,6 +115,13 @@ header {
 .error-submit .error-details{
   width: 80%;
   margin: 0 auto;
+  position: relative;
+}
+
+.favorite-btn {
+position: absolute;
+left: 15rem;
+top: 14rem;
 }
 
 .submit-title, .details-title, .top-title{
