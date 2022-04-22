@@ -58,25 +58,14 @@
       <% end %>
   </div>
   <div class="error-comments">
-    <%= form_with model:[@error, @comment], local: true do |f| %>
-      <%= f.text_area :comment, placeholder: "コメントをここに" %>
-      <%= f.submit "送信する" %>
-    <% end %>
+    <div class="comment-form">
+      <%= form_with model:[@error, @comment], local: true do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントをここに" %>
+        <%= f.submit "送信", class:"comment-submit" %>
+      <% end %>
+    </div>
     <div class="comments-table">
-      <table class="table">
-        <tbody>
-          <% @error.error_comments.each do |error_comment| %>
-          <tr>
-            <td>
-              <% unless error_comment.mentor_id.nil? %>
-                <%= error_comment.mentor.name %>
-              <% end %>
-            </td>
-            <td><%= error_comment.comment %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <%= render "error_comments/table_comments", error: @error %>
     </div>
   </div>
 </main>

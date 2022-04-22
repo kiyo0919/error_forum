@@ -1,0 +1,17 @@
+<table class="table-comment">
+  <h3><strong>コメント一覧</strong></h3>
+  <tbody>
+    <% error.error_comments.each do |error_comment| %>
+    <tr>
+      <td class="comment-mentor">
+        <% if error_comment.mentor_id.nil? %>
+          匿名さん
+        <% else %>
+          <%= error_comment.mentor.name %>
+        <% end %>
+      </th>
+      <td><%= error_comment.comment %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
