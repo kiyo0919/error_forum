@@ -3,7 +3,7 @@
     <div class="submit-title">
       <h1>エラー対応を記録を記入してくだい</h1>
     </div>
-    <%= form_with model:@error, url: confirm_path, local: true do |f| %>
+    <%= form_with model:@error, url: errors_path, method: :post, local: true do |f| %>
       <%= render "layouts/error_masages", model:f.object %>
       <table class="content-table">
         <tr>
@@ -28,7 +28,7 @@
         </tr>
         <tr>
           <th class="content-item">画像がある場合</th>
-          <td class="content-body"><%= f.file_field :image, accept: "image/*" %></td>
+          <td class="content-body"><%= f.file_field :images, multiple: true %></td>
         </tr>
         <tr>
           <th class="content-item">解決方法(Markdown形式で入力できます)</th>
@@ -47,7 +47,7 @@
           <td class="content-body"><%= f.text_field :mentor_name %></td>
         </tr>
       </table>
-      <%= f.submit "確認画面に進む", class:"content-submit" %>
+      <%= f.submit "投稿する", class:"content-submit" %>
     <% end %>
   </div>
 </main>

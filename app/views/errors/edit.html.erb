@@ -28,7 +28,7 @@
         </tr>
         <tr>
           <th class="content-item">画像がある場合</th>
-          <td class="content-body"><%= f.file_field :image, accept: "image/*" %></td>
+          <td class="content-body"><%= f.file_field :images, multiple: true %></td>
         </tr>
         <tr>
           <th class="content-item">解決方法(Markdown形式で入力できます)</th>

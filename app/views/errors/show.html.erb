@@ -30,8 +30,14 @@
         <td class="content-body"><%= markdown(@error.detail).html_safe %></td>
       </tr>
       <tr>
-        <th class="content-item">画像がある場合</th>
-        <td class="content-body"><%#= image_tag @error.image %></td>
+        <th class="content-item">画像がある場合<br>(クリックで拡大)</th>
+        <td class="content-body">
+          <% @error.images.each do |image| %>
+            <%= link_to image, "data-lightbox": image do %>
+              <%= image_tag(image, width:300, height:150) %>
+            <% end %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <th class="content-item">解決方法</th>

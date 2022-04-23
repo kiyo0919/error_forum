@@ -12,9 +12,9 @@ class ErrorsController < ApplicationController
     @comment = ErrorComment.new
   end
 
-  def confirm
-    @error = Error.new(error_params)
-  end
+  # def confirm
+  #   @error = Error.new(error_params)
+  # end
 
   def create
     @error = Error.new(error_params)
@@ -57,7 +57,7 @@ class ErrorsController < ApplicationController
   private
 
   def error_params
-    params.require(:error).permit(:title, :image, :detail, :learning_phase, :solution,
-                                  :url, :mentor_name, :used_technology_id)
+    params.require(:error).permit(:title, :detail, :learning_phase, :solution, :url,
+                                  :mentor_name, :used_technology_id, images: [])
   end
 end

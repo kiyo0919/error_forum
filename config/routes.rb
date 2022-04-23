@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get "/about" => "homes#about", as: "about"
-  post "errors/comfirm" => "errors#confirm", as: "confirm"
+  #post "errors/comfirm" => "errors#confirm", as: "confirm"
   resources :errors do
     resources :error_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]

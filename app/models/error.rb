@@ -5,6 +5,8 @@ class Error < ApplicationRecord
   belongs_to :mentor
   has_many :favorites, dependent: :destroy
 
+  has_many_attached :images
+
   with_options presence: true do
     validates :title
     validates :learning_phase

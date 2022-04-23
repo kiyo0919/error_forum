@@ -26,7 +26,11 @@
       </tr>
       <tr>
         <th class="content-item">画像がある場合</th>
-        <td class="content-body"><%#= image_tag @error.image %></td>
+        <td class="content-body">
+          <% @error.images.each do |image| %>
+            <%= image_tag(image, width:100) %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <th class="content-item">解決方法</th>
@@ -48,7 +52,10 @@
       <%= f.hidden_field :learning_phase, value: @error.learning_phase %>
       <%= f.hidden_field :used_technology_id, value: @error.used_technology_id %>
       <%= f.hidden_field :detail, value: @error.detail %>
-      <%#= f.hidden_field :image, value: @image %>
+      <%#= f.hidden_field :images, value: @error.images %>
+      <% @error.images.each do |image| %>
+        <%= f.field_tag :images[], value: @error.image %>
+      <% end %>
       <%= f.hidden_field :solution, value: @error.solution %>
       <%= f.hidden_field :url, value: @error.url%>
       <%= f.hidden_field :mentor_name, value: @error.mentor_name%>
