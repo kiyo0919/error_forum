@@ -11,6 +11,11 @@
         <% end %>
       </th>
       <td><%= error_comment.comment %></td>
+      <td>
+        <% if current_mentor.id == error_comment.mentor_id %>
+          <%= link_to "削除", error_error_comment_path(error.id, error_comment.id), method: :delete, remote: true, class:"btn-danger"%>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

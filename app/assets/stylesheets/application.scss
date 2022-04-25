@@ -253,6 +253,20 @@ textarea#error_solution {
   td {
     width: 80%;
   }
+  .btn-danger {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #D38493;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    font-size: 1.4rem;
+    border-radius: 100vh;
+    border: none;
+    margin: 2rem;
+    text-align: center;
+  }
 }
 
 .comment-form {

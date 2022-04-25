@@ -8,14 +8,14 @@ class ErrorCommentsController < ApplicationController
       @comment.mentor_id = current_mentor.id
     end
     @comment.save
-    redirect_to error_path(@error)
+    #redirect_to error_path(@error)
   end
 
   def destroy
     @error = Error.find(params[:error_id])
     @comment = ErrorComment.find_by(id: params[:id], error_id: params[:error_id])
     @comment.destroy
-    redirect_to root_path
+    #redirect_to root_path
   end
 
   private
