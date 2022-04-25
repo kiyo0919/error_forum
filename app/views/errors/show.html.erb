@@ -67,7 +67,7 @@
   </div>
   <div class="error-comments">
     <div class="comment-form">
-      <%= form_with model:[@error, @comment], local: true do |f| %>
+      <%= form_with model:[@error, @comment], local: false do |f| %>
         <%= f.text_area :comment, placeholder: "コメントをここに" %>
         <%= f.submit "送信", class:"comment-submit" %>
       <% end %>
