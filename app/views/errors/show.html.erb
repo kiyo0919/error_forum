@@ -3,14 +3,16 @@
     <div class="details-title">
       <h1>エラー対応詳細</h1>
     </div>
-    <div class="favorite-btn">
-      <% if mentor_signed_in? %>
-        <%= render "favorites/favorite_btn", error: @error, mentor: current_mentor %>
-      <% else %>
-        <%= link_to error_favorites_path(@error.id), method: :post do %>
-          <i class="fas fa-thumbs-up text-secondary fa-3x"></i>  <span class="text-secondary h5">高評価</span>
+    <div class="btn-favorite">
+      <div class="favorite-btn<%= @error.id %>">
+        <% if mentor_signed_in? %>
+          <%= render "favorites/favorite_btn", error: @error, mentor: current_mentor %>
+        <% else %>
+          <%= link_to error_favorites_path(@error.id), method: :post do %>
+            <i class="fas fa-thumbs-up text-secondary fa-3x"></i>  <span class="text-secondary h5">高評価</span>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
     <table class="content-table">
       <tr>
@@ -33,7 +35,7 @@
         <th class="content-item">画像がある場合<br>(クリックで拡大)</th>
         <td class="content-body">
           <% @error.images.each do |image| %>
-            <%= link_to image, "data-lightbox": image do %>
+            <%= link_to image, "data-lightbox"=> image do %>
               <%= image_tag(image, width:300, height:150) %>
             <% end %>
           <% end %>

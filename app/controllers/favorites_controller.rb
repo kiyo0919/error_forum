@@ -6,7 +6,6 @@ class FavoritesController < ApplicationController
       @favorite = current_mentor.favorites.new
       @favorite.error_id = @error.id
       @favorite.save
-      redirect_to error_path(@error)
     else
       flash[:alert] = "高評価する場合はログインしてください"
       redirect_to new_mentor_session_path
@@ -17,7 +16,6 @@ class FavoritesController < ApplicationController
     @error = Error.find(params[:error_id])
     @favorite = current_mentor.favorites.find_by(error_id: @error.id)
     @favorite.destroy
-    redirect_to error_path(@error)
   end
 
 end
