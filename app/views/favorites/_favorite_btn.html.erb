@@ -1,9 +1,9 @@
 <% if error.favorited_by?(mentor) %>
-  <%= link_to error_favorites_path(error.id), method: :delete do %>
+  <%= link_to error_favorites_path(error.id), method: :delete, remote: true do %>
     <i class="fas fa-thumbs-up text-danger fa-3x"></i>  <span class="text-danger h5">高評価</span>
   <% end %>
 <% else %>
-  <%= link_to error_favorites_path(error.id), method: :post do %>
+  <%= link_to error_favorites_path(error.id), method: :post, remote: true do %>
     <i class="fas fa-thumbs-up text-secondary fa-3x"></i>   <span class="text-secondary h5">高評価</span>
   <% end %>
 <% end %>
