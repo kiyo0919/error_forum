@@ -1,4 +1,5 @@
 <main>
+  <%= javascript_pack_tag 'app' %>
   <div class="error-details">
     <div class="details-title">
       <h1>エラー対応詳細</h1>
@@ -34,9 +35,10 @@
       <tr>
         <th class="content-item">画像がある場合<br>(クリックで拡大)</th>
         <td class="content-body">
+          <div class="error-images">
           <% @error.images.each do |image| %>
-            <%= link_to image, "data-lightbox"=> image do %>
-              <%= image_tag(image, width:300, height:150) %>
+            <%= link_to image, 'data-lightbox': image do%>
+              <%= image_tag image %>
             <% end %>
           <% end %>
         </td>

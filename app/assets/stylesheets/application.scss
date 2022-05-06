@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  * {
   margin: 0;
   padding: 0;
@@ -228,9 +229,14 @@ textarea#error_solution {
   border: none;
 }
 
-.top .btn a, .top .btn a:hover, .error-details a, .error-details a:hover {
+.top a, .top  a:hover, .error-details a, .error-details a:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.top .tbody-item a {
+  text-decoration: none;
+  color: black;
 }
 
 .error-btn {
@@ -291,6 +297,30 @@ textarea#error_solution {
   }
 }
 
+
+// エラー詳細ページ画像クリック時のjQuery
+  .error-images{
+    display: flex;
+  }
+
+  .error-img .error-img-ext img{
+    width: 100rem;
+    height: 80rem;
+  }
+  .error-images img{
+    width: 30rem;
+    height: 15rem;
+  }
+
+  .box1 {
+    background-color: #FF0000;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .box1-ext {
+    border: 10px solid black;
+  }
 // 新規登録画面
 .sign {
   font-family: 'Noto Sans JP', sans-serif;
