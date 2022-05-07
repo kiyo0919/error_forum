@@ -1,22 +1,28 @@
-<table class="table-comment">
-  <h3><strong>コメント一覧</strong></h3>
-  <tbody>
-    <% error.error_comments.each do |error_comment| %>
-    <tr>
-      <td class="comment-mentor">
+<div class="table-comment">
+  <h3><strong>コメント</strong></h3>
+  <div class="comment-form">
+    <%= form_with model:[error, comment], local: false do |f| %>
+      <%= f.text_area :comment, placeholder: "コメントをここに" %>
+      <%= f.submit "送信", class:"comment-submit" %>
+    <% end %>
+  </div>
+  <% error.error_comments.each do |error_comment| %>
+    <div class="comment-data">
+      <div class="comment-name">
         <% if error_comment.mentor_id.nil? %>
           匿名さん
         <% else %>
           <%= error_comment.mentor.name %>
         <% end %>
-      </th>
-      <td><%= error_comment.comment %></td>
-      <td>
-        <% if current_mentor.id == error_comment.mentor_id %>
-          <%= link_to "削除", error_error_comment_path(error.id, error_comment.id), method: :delete, remote: true, class:"btn-danger"%>
+      </div>
+      <div class="comment-content">コメント : <%= error_comment.comment %></div>
+      <div class="comment-link">
+        <% unless current_mentor.nil? %>
+          <% if current_mentor.id == error_comment.mentor_id %>
+            <%= link_to "削除", error_error_comment_path(error.id, error_comment.id), method: :delete, remote: true, class:"btn-danger"%>
+          <% end %>
         <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+  <% end %>
+</div>
