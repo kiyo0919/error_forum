@@ -68,14 +68,8 @@
       <% end %>
   </div>
   <div class="error-comments">
-    <div class="comment-form">
-      <%= form_with model:[@error, @comment], local: false do |f| %>
-        <%= f.text_area :comment, placeholder: "コメントをここに" %>
-        <%= f.submit "送信", class:"comment-submit" %>
-      <% end %>
-    </div>
     <div class="comments-table">
-      <%= render "error_comments/table_comments", error: @error %>
+      <%= render "error_comments/table_comments", error: @error, comment: @comment %>
     </div>
   </div>
 </main>

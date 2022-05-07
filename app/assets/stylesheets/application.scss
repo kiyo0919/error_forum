@@ -250,14 +250,47 @@ textarea#error_solution {
   margin: 5rem 10rem;
 }
 
-.table-comment {
-  width: 100%;
-  font-size: 1.5rem;
-  .comment-mentor {
-    width: 20%;
+  .error-img .error-img-ext img{
+    width: 100rem;
+    height: 80rem;
   }
-  td {
-    width: 80%;
+  .error-images img{
+    width: 30rem;
+    height: 15rem;
+    margin-left: 1rem;
+  }
+
+  .box1 {
+    background-color: #FF0000;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .box1-ext {
+    border: 10px solid black;
+  }
+
+// エラー詳細コメント部分
+.comments-table {
+  width: 80%;
+  margin: 10rem auto;
+}
+
+.table-comment {
+  width: 60%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  h3 {
+    font-size: 2.5rem;
+  }
+  .comment-data {
+    border: 1px solid #ccc;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .comment-name {
+    color: #74797B;
   }
   .btn-danger {
     width: 60px;
@@ -270,57 +303,59 @@ textarea#error_solution {
     font-size: 1.4rem;
     border-radius: 100vh;
     border: none;
-    margin: 2rem;
+    margin-top: 1rem;
     text-align: center;
   }
+  .comment-form {
+    width: 80%;
+    margin: 2rem auto;
+    display: inline-flex;
+    textarea#error_comment_comment {
+      width: 45rem;
+      height: 3rem;
+      margin-left: 3rem;
+      outline: none;
+    }
+
+    .comment-submit {
+      width: 60px;
+      height: 20px;
+      line-height: 20px;
+      background-color: #60AB9A;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.4rem;
+      border-radius: 100vh;
+      border: none;
+      margin: 1rem 3rem 3rem;
+      display: block;
+    }
+  }
 }
 
-.comment-form {
-  width: 80%;
-  margin: 7rem auto;
-  textarea#error_comment_comment {
-    width: 35rem;
-    height: 10rem;
-  }
-  .comment-submit {
-    width: 60px;
-    height: 20px;
-    line-height: 20px;
-    background-color: #60AB9A;
-    color: #fff;
-    font-weight: bold;
-    display: block;
-    font-size: 1.4rem;
-    border-radius: 100vh;
-    border: none;
-    margin: 2rem;
-  }
-}
 
+// .comment-form {
+//   width: 80%;
+//   margin: 7rem auto;
+//   textarea#error_comment_comment {
+//     width: 35rem;
+//     height: 10rem;
+//   }
+//   .comment-submit {
+//     width: 60px;
+//     height: 20px;
+//     line-height: 20px;
+//     background-color: #60AB9A;
+//     color: #fff;
+//     font-weight: bold;
+//     display: block;
+//     font-size: 1.4rem;
+//     border-radius: 100vh;
+//     border: none;
+//     margin: 2rem;
+//   }
+// }
 
-// エラー詳細ページ画像クリック時のjQuery
-  .error-images{
-    display: flex;
-  }
-
-  .error-img .error-img-ext img{
-    width: 100rem;
-    height: 80rem;
-  }
-  .error-images img{
-    width: 30rem;
-    height: 15rem;
-  }
-
-  .box1 {
-    background-color: #FF0000;
-    height: 200px;
-    width: 200px;
-  }
-  
-  .box1-ext {
-    border: 10px solid black;
-  }
 // 新規登録画面
 .sign {
   font-family: 'Noto Sans JP', sans-serif;
