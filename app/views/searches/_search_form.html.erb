@@ -1,0 +1,5 @@
+<%= form_with url: searches_path, method: :get, class:"form-inline", local: true do |f| %>
+  <%= f.select :learning_phase, @learning_phases.keys.map {|k| [I18n.t("enums.error.learning_phase.#{k}"), k]}, { include_blank: "フェーズ全体検索" } %>
+  <%= f.text_field :word, :placeholder => " 担当者名やエラーキーワード"  %>
+  <%= f.submit "検索", class:"search-btn" %>
+<% end %>

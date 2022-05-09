@@ -28,6 +28,10 @@ body {
   background-color: #F9F9FA;
 }
 
+input, textarea{
+  outline: none;
+}
+
 header a {
   color: black;
 }
@@ -70,8 +74,29 @@ header {
   height: 6rem;
   background-color: #DEDEE0;
   font-size: 1.5rem;
+  position: relative;
   li {
     line-height: 5rem;
+  }
+  .header-form {
+    position: absolute;
+    right: 10rem;
+    top: 1.7rem;
+    font-size: 1.2rem;
+    select#learning_phase {
+      width: 14rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+    input#word {
+      width: 20rem;
+      height: 2.5rem;
+    }
+    .search-btn {
+      width: 4rem;
+      height: 2.5rem;
+      margin-left: 1rem;
+    }
   }
 }
 
