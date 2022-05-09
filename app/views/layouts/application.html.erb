@@ -21,6 +21,9 @@
         <li class="nav-item">
           <%= link_to "ログアウト", destroy_mentor_session_path, method: :delete, class:"nav-link" %>
         </li>
+        <div class="header-form">
+          <%= render "searches/search_form" %>
+        </div>
         <% else %>
           <li class="nav-item">
           <%= link_to "投稿一覧", root_path, class:"nav-link" %>

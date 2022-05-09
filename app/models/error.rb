@@ -21,4 +21,19 @@ class Error < ApplicationRecord
   def favorited_by?(mentor)
     favorites.where(mentor_id: mentor.id).exists?
   end
+
+  def searh_for(word, learning_phase)
+    if learning_phase == "basic_knowledge"
+    elsif learning_phase == "team_development"
+    elsif learning_phase == "advance_task"
+    elsif learning_phase == "advance_learning"
+    elsif learning_phase == "port_folio"
+    elsif learning_phase == "ai_culture"
+    elsif learning_phase == "cloud_culture"
+    elsif learning_phase == "challenge"
+    elsif learning_phase == "development_skill_up"
+    else
+      #全体検索処理
+    end
+  end
 end
