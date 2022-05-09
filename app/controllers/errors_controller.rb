@@ -12,10 +12,6 @@ class ErrorsController < ApplicationController
     @comment = ErrorComment.new
   end
 
-  # def confirm
-  #   @error = Error.new(error_params)
-  # end
-
   def create
     @error = Error.new(error_params)
     @error.mentor_id = current_mentor.id
