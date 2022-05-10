@@ -22,18 +22,30 @@ class Error < ApplicationRecord
     favorites.where(mentor_id: mentor.id).exists?
   end
 
-  def searh_for(word, learning_phase)
-    if learning_phase == "basic_knowledge"
+  def self.search_for(word, learning_phase)
+    if  Mentor.find_by(name: word)
+      mentor = Mentor.find_by(name: word)
+      mentor.supports
+    elsif learning_phase == "basic_knowledge"
+      Error.where(learning_phase: "basic_knowledge").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "team_development"
+      Error.where(learning_phase: "team_development").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "advance_task"
+      Error.where(learning_phase: "advance_task").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "advance_learning"
+      Error.where(learning_phase: "advance_learning").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "port_folio"
+      Error.where(learning_phase: "port_folio").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "ai_culture"
+      Error.where(learning_phase: "ai_culture").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "cloud_culture"
+      Error.where(learning_phase: "cloud_culture").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "challenge"
+      Error.where(learning_phase: "challenge").where("title LIKE ?", "%#{word}%")
     elsif learning_phase == "development_skill_up"
-    else
-      #全体検索処理
+      Error.where(learning_phase: "development_skill_up").where("title LIKE ?", "%#{word}%")
+    elsif learning_phase == "all_phese" # 全体処理
+      Error.where("title LIKE ?", "%#{word}%")
     end
   end
 end
