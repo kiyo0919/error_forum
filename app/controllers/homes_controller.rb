@@ -5,6 +5,6 @@ class HomesController < ApplicationController
   end
 
   def about
-    
+    @learning_phases = Error.learning_phases
   end
 end
