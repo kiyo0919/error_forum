@@ -1,6 +1,6 @@
 <main>
   <div class="search-results">
-    <h4>検索結果</h4>
+    <h4>検索結果  <%= @errors.count %>件</h4>
     <% if @errors.count == 0 %>
       <h3><strong>検索条件に一致するエラー情報は見つかりませんでした。</strong></h3>
     <% else %>
