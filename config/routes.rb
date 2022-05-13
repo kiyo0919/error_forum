@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :error_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
+  resources :mentors, only: [:show, :edit, :update]
   resources :used_technologies, only: [:index, :create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
